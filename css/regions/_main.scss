@@ -1,0 +1,36 @@
+main {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  @include buildFont($sansFont, 16px, black);
+}
+p {
+  @include buildFont($sansFont, 16px, black);
+  text-align: center;
+}
+.loginBox {
+  width: 300px;
+  height: 300px;
+  margin: 30px 0 30px 0;
+  border: 1px solid #cccccc;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  @include buildFont($sansFont, 16px, black);
+}
+.loginForm {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  div {
+    margin-bottom: 30px;
+    a {
+      text-decoration: none;
+      color: $dkAqua;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
