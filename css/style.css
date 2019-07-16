@@ -68,6 +68,12 @@ p {
   font-size: 16px;
   color: black;
 }
+.loginBox #email {
+  border: 1px solid #ccc;
+}
+.loginBox #password {
+  border: 1px solid #ccc;
+}
 
 .loginForm {
   margin: 30px;

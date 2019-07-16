@@ -13,10 +13,15 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+// app.use("/", express.static("public"));
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/dashboard.html");
 });
 
-app.listen(8081, "0.0.0.0", () => {
-  console.log("Server is running");
+app.use("/css", express.static("css"));
+app.use("/images", express.static("images"));
+
+app.listen(8082, "0.0.0.0", () => {
+  console.log("Server is running on port 8082!");
 });

@@ -17,6 +17,12 @@ p {
   display: flex;
   justify-content: center;
   @include buildFont($sansFont, 16px, black);
+  #email {
+    border: 1px solid #ccc;
+  }
+  #password {
+    border: 1px solid #ccc;
+  }
 }
 .loginForm {
   margin: 30px;
