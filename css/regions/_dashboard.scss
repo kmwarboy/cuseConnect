@@ -1,0 +1,14 @@
+.dashboardContainer {
+  margin: 20px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  width: 600px;
+  min-height: 600px;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  @include buildFont($sansFont, 16px, black);
+}
+iframe {
+  margin: 10px;
+}

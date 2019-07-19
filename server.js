@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 // app.use("/", express.static("public"));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/dashboard.html");
+  res.sendFile(__dirname + "dashboard.html");
 });
 
 app.use("/css", express.static("css"));
