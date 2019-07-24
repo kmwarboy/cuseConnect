@@ -10,7 +10,7 @@ p {
 }
 .formBox {
   width: auto;
-  height: 300px;
+  min-height: 300px;
   margin: 30px 0 30px 0;
   border: 1px solid #cccccc;
   border-radius: 5%;
@@ -19,9 +19,22 @@ p {
   @include buildFont($sansFont, 16px, black);
   #email {
     border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
   }
   #password {
     border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+  }
+  button {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: $dkAqua;
+    @include buildFont($sansFont, 18px, white);
   }
 }
 .inputForm {

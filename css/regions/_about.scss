@@ -1,0 +1,29 @@
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  min-height: 300px;
+  margin: 30px 0 30px 0;
+  border: 1px solid #cccccc;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutText {
+  margin: 30px;
+  h1 {
+    text-align: right;
+    @include buildFont($sansFont, 30px, $dkOrange);
+    font-weight: bold;
+  }
+  h2 {
+    text-align: left;
+    @include buildFont($sansFont, 26px, $dkAqua);
+  }
+  p {
+    word-wrap: normal;
+    text-align: justify;
+    @include buildFont($sansFont, 16px, black);
+  }
+}
