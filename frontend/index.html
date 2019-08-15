@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CuseConnect | Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Domine|Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="logoHeader">
+      <img
+        src="../images/cuseConnect.svg"
+        id="orangeLogo"
+        alt="orange cuse connect logo"
+      />
+    </header>
+    <nav>
+      <div class="linkContainer">
+        <!-- <a href="#" class="navLinks">Login</a> -->
+        <a href="./dashboard.html" class="navLinks">Dashboard</a>
+        <a href="./about.html" class="navLinks">About</a>
+      </div>
+    </nav>
+    <main>
+      <div class="formBox">
+        <form class="inputForm">
+          <p>Please login or create an account below.</p>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" />
+          </div>
+          <div>
+            <button class="Login" type="submit" {event.preventDefault}">
+              Login
+            </button>
+          </div>
+          <div>
+            <p>Need an account? <a href="signUp.html">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
