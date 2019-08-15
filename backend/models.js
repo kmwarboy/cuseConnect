@@ -14,6 +14,7 @@ module.exports = () => {
         primaryKey: "true",
         autoIncrement: "true"
       },
+      name: Sequelize.STRING,
       userName: Sequelize.STRING,
       password: Sequelize.STRING,
       address: Sequelize.STRING,

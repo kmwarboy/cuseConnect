@@ -25,7 +25,7 @@
     </nav>
     <main>
         <div class="formBox">
-            <form class="inputForm">
+            <form class="inputForm" onsubmit="newUser(event)">
                 <div>
                     <label for="name" >Full Name:</label>
                     <input type="text" id="name" />
@@ -36,14 +36,14 @@
                 </div>
                 <div>
                   <label for="password">Password:</label>
-                  <input type="text" id="password" />
+                  <input type="password" id="password" />
               </div>
                 <div>
                     <label for="address">Address:</label>
                     <input type="text" id="address"/>
                 </div>
                 <div>
-                    <button class="submit" onClick={preventDefault}>Create Account</button>
+                    <button class="submit">Create Account</button>
                 </div>
             </form>
         </div>
@@ -51,8 +51,38 @@
     </main>
   </body>
 <!--start js below to get information from input fields to database-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
+
+  function newUser(event) {
+    event.preventDefault();
+
+    const name = $("#name").val();
+		const userName = $("#userName").val();
+    const password = $("#password").val();
+    const address = $("#address").val();
+
+
+    fetch("http://localhost:8082/user", {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({ name, userName, password, address })
+				})
+					.then(rawJSON => {
+						return rawJSON.json();
+					})
+					.then(data => {
+            console.log(data);
+            alert("Account created successfully!");
+            location.href ='index.html';
+          });
+          
+          $('input[type="text"]').val('');
+
+  }
 
 </script>
 

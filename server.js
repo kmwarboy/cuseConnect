@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const models = require("./models")();
+const models = require("../cuseConnect/backend/models")();
 models.init();
 
 const moment = require("moment");
@@ -16,7 +16,12 @@ app.get("/", (req, res) => {
 });
 
 app.put("/user", async (req, res) => {
-  await models.User.create({ userName: req.body.userName });
+  await models.User.create({
+    userName: req.body.userName,
+    name: req.body.name,
+    password: req.body.password,
+    address: req.body.address
+  });
   res.send({ message: "user created" });
 });
 
