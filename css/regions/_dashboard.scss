@@ -6,7 +6,9 @@
   min-height: 600px;
   border-radius: 5%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   @include buildFont($sansFont, 16px, black);
 }
 iframe {

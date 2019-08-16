@@ -28,6 +28,11 @@
     </nav>
     <main>
       <div class="dashboardContainer">
+        <div class="welcomeMsg">
+          <h1>
+            👋🏽 welcome, (user.name)!
+          </h1>
+        </div>
         <div class="googleMap">
           <iframe
             width="500"
@@ -37,6 +42,22 @@
             src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZqXv5vz2YkRRZWt1-IM1QA&key=AIzaSyDqkDCt-Yy0UzcogqiOHKrQr72aby6xOAc"
             allowfullscreen
           ></iframe>
+        </div>
+        <div class="infoContainer">
+          <div id="userQuadrant">
+            <h2>
+              You are in the
+              <p>(user.quadrant) quadrant.</p>
+            </h2>
+          </div>
+        </div>
+        <div class="infoContainer">
+          <div id="userTrashPickup">
+            <h2>
+              Your next scheduled trash pickup day is:<br />
+              <p>(user.trashPickup)(date?).</p>
+            </h2>
+          </div>
         </div>
       </div>
     </main>

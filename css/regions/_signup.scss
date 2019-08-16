@@ -13,6 +13,15 @@ nav {
   @include buildFont($sansFont, 16px, black);
 }
 
+.tagLine {
+  display: flex;
+  justify-content: center;
+  h2 {
+    text-align: center;
+    @include buildFont($sansFont, 20px, black);
+  }
+}
+
 .navLinks {
   text-decoration: none;
   font-family: $sansFont;

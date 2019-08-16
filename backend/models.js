@@ -3,7 +3,8 @@ module.exports = () => {
 
   const db = new Sequelize("cuseconnect", "kaitlynwarboy", "", {
     host: "127.0.0.1",
-    dialect: "postgres"
+    dialect: "postgres",
+    logging: false
   });
 
   return {
@@ -17,11 +18,12 @@ module.exports = () => {
       name: Sequelize.STRING,
       userName: Sequelize.STRING,
       password: Sequelize.STRING,
-      address: Sequelize.STRING,
+      houseNumber: Sequelize.INTEGER,
+      streetName: Sequelize.STRING,
       trashPickup: Sequelize.STRING
     }),
     init: function() {
-      db.sync({ force: "true" });
+      db.sync({ force: true });
     }
   };
 };

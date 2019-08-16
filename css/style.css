@@ -5,9 +5,9 @@ body {
 }
 
 nav {
-  background-color: #fff;
   display: flex;
   justify-content: center;
+  background-color: #fff;
 }
 
 .linkContainer {
@@ -28,7 +28,7 @@ nav {
 }
 
 .logoHeader {
-  margin: 20px 0 20px 0;
+  margin: 20px 0 0px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -56,6 +56,22 @@ p {
   text-align: center;
 }
 
+.tagLine {
+  display: flex;
+  justify-content: center;
+}
+.tagLine div {
+  width: 390px;
+}
+.tagLine div h3 {
+  text-align: center;
+  word-wrap: normal;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
 .formBox {
   width: auto;
   min-height: 300px;
@@ -68,7 +84,7 @@ p {
   font-size: 16px;
   color: black;
 }
-.formBox #email {
+.formBox #userName {
   border: 1px solid #ccc;
   width: 100%;
   margin: 0;
@@ -124,6 +140,17 @@ nav {
   color: black;
 }
 
+.tagLine {
+  display: flex;
+  justify-content: center;
+}
+.tagLine h2 {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
 .navLinks {
   text-decoration: none;
   font-family: "Lato", sans-serif;
@@ -138,7 +165,9 @@ nav {
   min-height: 600px;
   border-radius: 5%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   color: black;

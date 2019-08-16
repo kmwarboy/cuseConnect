@@ -8,6 +8,21 @@ p {
   @include buildFont($sansFont, 16px, black);
   text-align: center;
 }
+
+.tagLine {
+  display: flex;
+  justify-content: center;
+  div {
+    width: 390px;
+    h3 {
+      text-align: center;
+      word-wrap: normal;
+      font-weight: 400;
+      @include buildFont($sansFont, 16px, black);
+    }
+  }
+}
+
 .formBox {
   width: auto;
   min-height: 300px;
@@ -17,7 +32,7 @@ p {
   display: flex;
   justify-content: center;
   @include buildFont($sansFont, 16px, black);
-  #email {
+  #userName {
     border: 1px solid #ccc;
     width: 100%;
     margin: 0;
