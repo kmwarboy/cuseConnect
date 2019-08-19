@@ -177,6 +177,28 @@ iframe {
   margin: 10px;
 }
 
+.welcomeMsg {
+  margin: 15px 0 20px 0;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: black;
+  font-weight: 700;
+}
+
+#nameOfUser {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: #ff6b21;
+  font-weight: 700;
+}
+
+p #trashPickup {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: #ff6b21;
+  font-weight: 700;
+}
+
 .aboutContainer {
   display: flex;
   justify-content: center;

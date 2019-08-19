@@ -20,7 +20,9 @@ module.exports = () => {
       password: Sequelize.STRING,
       houseNumber: Sequelize.INTEGER,
       streetName: Sequelize.STRING,
-      trashPickup: Sequelize.STRING
+      trashPickup: Sequelize.STRING,
+      x: Sequelize.DECIMAL,
+      y: Sequelize.DECIMAL
     }),
     init: function() {
       db.sync({ force: true });

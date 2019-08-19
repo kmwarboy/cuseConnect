@@ -32,13 +32,13 @@
     <nav>
       <div class="linkContainer">
         <!-- <a href="#" class="navLinks">Login</a> -->
-        <a href="./dashboard.html" class="navLinks">Dashboard</a>
+        <!-- <a href="./dashboard.html" class="navLinks">Dashboard</a> -->
         <a href="./about.html" class="navLinks">About</a>
       </div>
     </nav>
     <main>
       <div class="formBox">
-        <form class="inputForm">
+        <form class="inputForm" onsubmit="loginUser(event)">
           <p>Please login or create an account below.</p>
           <div>
             <label for="userName">Username:</label>
@@ -58,4 +58,34 @@
       </div>
     </main>
   </body>
+
+  <!--start js below to get information from database to login-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function loginUser(event) {
+      event.preventDefault();
+
+      fetch("/login", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          userName: $("#userName").val(),
+          password: $("#password").val()
+        })
+      })
+        .then(rawJSON => {
+          return rawJSON.json();
+        })
+        .then(data => {
+          if (data.message === "User is signed in.") {
+            window.location.href = "/dashboard.html";
+          } else {
+            alert("User cannot be signed in.");
+          }
+        });
+    }
+  </script>
 </html>

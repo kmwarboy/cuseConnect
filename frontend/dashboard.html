@@ -22,17 +22,15 @@
     </header>
     <nav>
       <div class="linkContainer">
-        <a href="./index.html" class="navLinks">Logout</a>
+        <a href="./index.html" class="navLinks" onclick="logoutUser(event)"
+          >Logout</a
+        >
         <a href="./about.html" class="navLinks">About</a>
       </div>
     </nav>
     <main>
       <div class="dashboardContainer">
-        <div class="welcomeMsg">
-          <h1>
-            👋🏽 welcome, (user.name)!
-          </h1>
-        </div>
+        <div class="welcomeMsg">👋🏽 Welcome, <span id="nameOfUser"></span>!</div>
         <div class="googleMap">
           <iframe
             width="500"
@@ -55,11 +53,47 @@
           <div id="userTrashPickup">
             <h2>
               Your next scheduled trash pickup day is:<br />
-              <p>(user.trashPickup)(date?).</p>
+              <p><span id="trashPickup"></span></p>
             </h2>
           </div>
         </div>
       </div>
     </main>
   </body>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    fetch("/dashboard", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(rawJSON => {
+        return rawJSON.json();
+      })
+      .then(data => {
+        $("#trashPickup").html(data.trashPickup);
+        $("#nameOfUser").html(data.name);
+        console.log(data);
+      });
+
+    function logoutUser(event) {
+      event.preventDefault();
+      fetch("http://localhost:8082/logout", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        credentials: "include",
+        mode: "cors"
+      })
+        .then(rawJSON => {
+          return rawJSON.json();
+        })
+        .then(data => {
+          console.log("User is logged out.");
+          window.location = "index.html";
+        });
+    }
+  </script>
 </html>

@@ -14,3 +14,19 @@
 iframe {
   margin: 10px;
 }
+
+.welcomeMsg {
+  margin: 15px 0 20px 0;
+  @include buildFont($sansFont, 30px, black);
+  font-weight: 700;
+}
+
+#nameOfUser {
+  @include buildFont($sansFont, 30px, $dkOrange);
+  font-weight: 700;
+}
+
+p #trashPickup {
+  @include buildFont($sansFont, 30px, $dkOrange);
+  font-weight: 700;
+}
