@@ -22,10 +22,11 @@ module.exports = () => {
       streetName: Sequelize.STRING,
       trashPickup: Sequelize.STRING,
       x: Sequelize.DECIMAL,
-      y: Sequelize.DECIMAL
+      y: Sequelize.DECIMAL,
+      quadrant: Sequelize.STRING
     }),
     init: function() {
-      db.sync({ force: true });
+      db.sync({ force: false });
     }
   };
 };

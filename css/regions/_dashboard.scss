@@ -21,7 +21,16 @@ iframe {
   font-weight: 700;
 }
 
+.userQuadrant {
+  text-align: center;
+}
+
 #nameOfUser {
+  @include buildFont($sansFont, 30px, $dkOrange);
+  font-weight: 700;
+}
+
+#quadrantOfUser {
   @include buildFont($sansFont, 30px, $dkOrange);
   font-weight: 700;
 }

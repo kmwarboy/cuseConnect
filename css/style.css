@@ -185,7 +185,18 @@ iframe {
   font-weight: 700;
 }
 
+.userQuadrant {
+  text-align: center;
+}
+
 #nameOfUser {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: #ff6b21;
+  font-weight: 700;
+}
+
+#quadrantOfUser {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   color: #ff6b21;

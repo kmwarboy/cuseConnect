@@ -45,7 +45,8 @@
           <div id="userQuadrant">
             <h2>
               You are in the
-              <p>(user.quadrant) quadrant.</p>
+              <span id="quadrantOfUser"></span>
+              quadrant.
             </h2>
           </div>
         </div>
@@ -76,7 +77,8 @@
       .then(data => {
         $("#trashPickup").html(data.trashPickup);
         $("#nameOfUser").html(data.name);
-        console.log(data);
+        $("#quadrantOfUser").html(data.quadrant);
+        // console.log(data);
       });
 
     function logoutUser(event) {
