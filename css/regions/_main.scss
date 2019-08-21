@@ -4,6 +4,7 @@ main {
   justify-content: center;
   @include buildFont($sansFont, 16px, black);
 }
+
 p {
   @include buildFont($sansFont, 16px, black);
   text-align: center;
@@ -38,6 +39,21 @@ p {
     margin: 0;
   }
   #password {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+  }
+  #name {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+  }
+  #streetName {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+  }
+  #houseNumber {
     border: 1px solid #ccc;
     width: 100%;
     margin: 0;

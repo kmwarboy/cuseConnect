@@ -5,19 +5,19 @@
 }
 
 @mixin breakpoint($class) {
-  @if $class == xs {
+  @if $mobile == xs {
     @media (max-width: 767px) {
       @content;
     }
-  } @else if $class == sm {
+  } @else if $tablet == sm {
     @media (min-width: 768px) {
       @content;
     }
-  } @else if $class == md {
+  } @else if $laptop == md {
     @media (min-width: 992px) {
       @content;
     }
-  } @else if $class == lg {
+  } @else if $desktop == lg {
     @media (min-width: 1200px) {
       @content;
     }

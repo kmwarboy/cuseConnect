@@ -94,6 +94,21 @@ p {
   width: 100%;
   margin: 0;
 }
+.formBox #name {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0;
+}
+.formBox #streetName {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0;
+}
+.formBox #houseNumber {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0;
+}
 .formBox button {
   width: 100%;
   margin: 0;
@@ -161,7 +176,8 @@ nav {
   margin: 20px;
   padding: 0 10px;
   border: 1px solid #ccc;
-  width: 600px;
+  width: auto;
+  max-width: 600px;
   min-height: 600px;
   border-radius: 5%;
   display: flex;
@@ -174,6 +190,9 @@ nav {
 }
 
 iframe {
+  width: auto;
+  max-width: 500px;
+  height: auto;
   margin: 10px;
 }
 
@@ -187,6 +206,11 @@ iframe {
 
 .userQuadrant {
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+  word-wrap: normal;
 }
 
 #nameOfUser {
@@ -213,13 +237,12 @@ p #trashPickup {
 .aboutContainer {
   display: flex;
   justify-content: center;
-  width: 400px;
+  width: auto;
+  max-width: 400px;
   min-height: 300px;
-  margin: 30px 0 30px 0;
+  margin: 30px 20px 30px 20px;
   border: 1px solid #cccccc;
   border-radius: 5%;
-  display: flex;
-  justify-content: center;
 }
 
 .aboutText {

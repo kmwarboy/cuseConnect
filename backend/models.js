@@ -1,8 +1,15 @@
 module.exports = () => {
   const Sequelize = require("sequelize");
 
-  const db = new Sequelize("cuseconnect", "kaitlynwarboy", "", {
-    host: "127.0.0.1",
+  // const db = new Sequelize("cuseconnect", "kaitlynwarboy", "", {
+  //   host: "127.0.0.1",
+  //   dialect: "postgres",
+  //   logging: false
+  // });
+
+  // add database information here before deployment!
+  const db = new Sequelize("", "", "", {
+    host: "",
     dialect: "postgres",
     logging: false
   });

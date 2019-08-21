@@ -2,7 +2,8 @@
   margin: 20px;
   padding: 0 10px;
   border: 1px solid #ccc;
-  width: 600px;
+  width: auto;
+  max-width: 600px;
   min-height: 600px;
   border-radius: 5%;
   display: flex;
@@ -12,6 +13,9 @@
   @include buildFont($sansFont, 16px, black);
 }
 iframe {
+  width: auto;
+  max-width: 500px;
+  height: auto;
   margin: 10px;
 }
 
@@ -23,6 +27,11 @@ iframe {
 
 .userQuadrant {
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+  word-wrap: normal;
 }
 
 #nameOfUser {

@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css?family=Domine|Lato:400,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../images/favicon.ico"
+    />
     <title>Dashboard</title>
   </head>
   <body>
@@ -33,8 +38,6 @@
         <div class="welcomeMsg">👋🏽 Welcome, <span id="nameOfUser"></span>!</div>
         <div class="googleMap">
           <iframe
-            width="500"
-            height="auto"
             frameborder="0"
             style="border: 1px solid #ccc"
             src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZqXv5vz2YkRRZWt1-IM1QA&key=AIzaSyDqkDCt-Yy0UzcogqiOHKrQr72aby6xOAc"
@@ -52,17 +55,15 @@
         </div>
         <div class="infoContainer">
           <div id="userTrashPickup">
-            <h2>
-              Your next scheduled trash pickup day is:<br />
-              <p><span id="trashPickup"></span></p>
-            </h2>
+            <h2>Your next scheduled trash pickup day is:</h2>
+            <p><span id="trashPickup"></span></p>
           </div>
         </div>
       </div>
     </main>
   </body>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
     fetch("/dashboard", {
       method: "GET",
@@ -74,16 +75,26 @@
       .then(rawJSON => {
         return rawJSON.json();
       })
-      .then(data => {
+      .then(async data => {
         $("#trashPickup").html(data.trashPickup);
         $("#nameOfUser").html(data.name);
         $("#quadrantOfUser").html(data.quadrant);
         // console.log(data);
+
+        //   let quadData = await fetch(
+        //     `https://services.arcgis.com/uDTUpUPbk8X8mXwl/arcgis/rest/services/Syracuse_Quadrants/FeatureServer/0/query?where=1%3D1&outFields=NAME,Quad,Shape__Area,Shape__Length&outSR=4326&f=json`
+        //   );
+        //   quadData = await quadData.json();
+        //   let northEast = quadData.features[0].geometry.rings[0];
+        //   let northWest = quadData.features[1].geometry.rings[0];
+        //   let southEast = quadData.features[2].geometry.rings[0];
+        //   let southWest = quadData.features[3].geometry.rings[0];
+        //   console.log(southWest);
       });
 
     function logoutUser(event) {
       event.preventDefault();
-      fetch("http://localhost:8082/logout", {
+      fetch("/logout", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         credentials: "include",

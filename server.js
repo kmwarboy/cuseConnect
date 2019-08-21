@@ -20,18 +20,6 @@ app.use(cookieParser("abc123"));
 app.put("/user", async (req, res) => {
   const houseNumberInt = parseInt(req.body.houseNumber);
 
-  // fetch(
-  //   `https://services6.arcgis.com/bdPqSfflsdgFRVVM/arcgis/rest/services/Trash_Pickup_Day/FeatureServer/0/query?where=UPPER(number)%20like%20'%25${
-  //     req.body.houseNumber
-  //   }%25'%20AND%20UPPER(address)%20like%20'%25${req.body.streetName.toUpperCase()}%25'&outFields=number,address,Trash_Pickup_Day&outSR=4326&f=json`
-  // )
-  //   .then(data => {
-  //     return data.json();
-  //   })
-  //   .then(data => {
-  //     console.log(data.features[0].attributes.Trash_Pickup_Day);
-  //   });
-
   let data = await fetch(
     `https://services6.arcgis.com/bdPqSfflsdgFRVVM/arcgis/rest/services/Trash_Pickup_Day/FeatureServer/0/query?where=UPPER(number)%20like%20'${
       req.body.houseNumber
@@ -153,38 +141,8 @@ app.get("/users", async (req, res) => {
 
 app.use("/", express.static(path.join(__dirname, "frontend")));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "dashboard.html");
-// });
-
 app.use("/css", express.static(path.join(__dirname, "css")));
 app.use("/images", express.static(path.join(__dirname, "images")));
-
-// app.get("/test", async (req, res) => {
-//   let quadData = await fetch(
-//     `https://services.arcgis.com/uDTUpUPbk8X8mXwl/arcgis/rest/services/Syracuse_Quadrants/FeatureServer/0/query?where=1%3D1&outFields=NAME,Quad,Shape__Area,Shape__Length&outSR=4326&f=json`
-//   );
-//   quadData = await quadData.json();
-//   let northEast = quadData.features[0].geometry.rings[0];
-//   let northWest = quadData.features[1].geometry.rings[0];
-//   let southEast = quadData.features[2].geometry.rings[0];
-//   let southWest = quadData.features[3].geometry.rings[0];
-//   let userQuadrant;
-
-//   console.log(northEast);
-
-//   if (pointInPolygon([req.query.x, req.query.y], northEast)) {
-//     res.send("North East");
-//   } else if (pointInPolygon([req.query.x, req.query.y], northWest)) {
-//     res.send("North West");
-//   } else if (pointInPolygon([req.query.x, req.query.y], southEast)) {
-//     res.send("South East");
-//   } else if (pointInPolygon([req.query.x, req.query.y], southWest)) {
-//     res.send("South West");
-//   } else {
-//     res.send("No Idea!");
-//   }
-// });
 
 app.listen(8082, "0.0.0.0", () => {
   console.log("Server is running on port 8082!");
