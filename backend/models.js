@@ -7,9 +7,10 @@ module.exports = () => {
   //   logging: false
   // });
 
-  // add database information here before deployment!
-  const db = new Sequelize("", "", "", {
-    host: "",
+  // remove db info before git push, and add db information here before deployment!
+
+  const db = new Sequelize("postgres", "postgres", "Kv39aV9bR9wi8Sndr8Mw", {
+    host: "cuseconnect.cmk1puqneyj9.us-east-2.rds.amazonaws.com",
     dialect: "postgres",
     logging: false
   });
