@@ -1,12 +1,6 @@
 module.exports = () => {
   const Sequelize = require("sequelize");
 
-  // const db = new Sequelize("cuseconnect", "kaitlynwarboy", "", {
-  //   host: "127.0.0.1",
-  //   dialect: "postgres",
-  //   logging: false
-  // });
-
   // remove db info before git push, and add db information here before deployment!
 
   const db = new Sequelize("postgres", "postgres", " ", {
